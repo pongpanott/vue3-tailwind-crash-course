@@ -86,43 +86,43 @@ export const secondaryColor = [
 
 export const neutralColor = [
 	{
-		variant: "bg-secondary-50",
+		variant: "bg-neutral-50",
 		hex: "#f3f4f3",
 	},
 	{
-		variant: "bg-secondary-100",
+		variant: "bg-neutral-100",
 		hex: "#e1e3e1",
 	},
 	{
-		variant: "bg-secondary-200",
+		variant: "bg-neutral-200",
 		hex: "#ced0cd",
 	},
 	{
-		variant: "bg-secondary-300",
+		variant: "bg-neutral-300",
 		hex: "#babdb9",
 	},
 	{
-		variant: "bg-secondary-400",
+		variant: "bg-neutral-400",
 		hex: "#abafaa",
 	},
 	{
-		variant: "bg-secondary-500",
+		variant: "bg-neutral-500",
 		hex: "#9ca19b",
 	},
 	{
-		variant: "bg-secondary-600",
+		variant: "bg-neutral-600",
 		hex: "#949993",
 	},
 	{
-		variant: "bg-secondary-700",
+		variant: "bg-neutral-700",
 		hex: "#8a8f89",
 	},
 	{
-		variant: "bg-secondary-800",
+		variant: "bg-neutral-800",
 		hex: "#80857f",
 	},
 	{
-		variant: "bg-secondary-900",
+		variant: "bg-neutral-900",
 		hex: "#6e746d",
 	},
 ];
