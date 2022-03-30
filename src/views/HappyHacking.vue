@@ -12,12 +12,13 @@
 					label="firstname"
 					v-model="text"
 					:error="error"
+					:isEmpty="text.trim() === ''"
 				/>
 				<TextField
 					placeholder="this field has been disabled"
 					label="disable"
-					v-model="text"
 					:disabled="true"
+					:isEmpty="true"
 				/>
 
 				<div class="mt-4">
