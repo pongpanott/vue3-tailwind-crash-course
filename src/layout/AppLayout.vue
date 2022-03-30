@@ -1,7 +1,7 @@
 <template>
 	<MobileNavbar />
 	<DesktopNavbar />
-	<div class="flex flex-col justify-center rounded px-4 mt-[100px]">
+	<div class="flex flex-col justify-center rounded px-4 py-8">
 		<slot></slot>
 	</div>
 </template>

@@ -2,28 +2,30 @@
 	<AppLayout>
 		<div class="max-w-[600px] mx-auto w-full flex flex-col gap-y-6">
 			<div><PrimaryButton /></div>
+
 			<form
 				@submit.prevent="onSubmit"
 				class="border-[1px] border-gray-200 rounded w-full p-4 flex flex-col"
 			>
-				<div class="flex flex-col text-left">
-					<!-- NOTE: style yout text field component here -->
-					<input type="text" placeholder="enter your name" v-model="text" />
-					<div class="min-h-[24px]">
-						<span v-if="error" class="text-red-500 text-xs"
-							>this field is required.</span
-						>
-					</div>
-				</div>
+				<TextField
+					placeholder="enter firstname"
+					label="firstname"
+					v-model="text"
+					:error="error"
+				/>
+				<TextField
+					placeholder="this field has been disabled"
+					label="disable"
+					v-model="text"
+					:disabled="true"
+				/>
 
 				<div class="mt-4">
 					<button>submit</button>
 				</div>
 			</form>
-			<div class="border-[1px] border-gray-200 rounded-lg">
-				<img :src="plusIcon" class="h-10 w-10" />
-				<img :src="jiramed" />
-			</div>
+
+			<ProfileCard />
 		</div>
 	</AppLayout>
 </template>
@@ -31,16 +33,16 @@
 <script>
 import AppLayout from "@/layout/AppLayout";
 import PrimaryButton from "@/components/PrimaryButton";
+import ProfileCard from "@/components/ProfileCard";
+import TextField from "@/components/TextField";
 
 export default {
 	name: "HappyHacking",
-	components: { AppLayout, PrimaryButton },
+	components: { AppLayout, PrimaryButton, ProfileCard, TextField },
 	data() {
 		return {
 			text: "",
 			error: false,
-			plusIcon: require("@/assets/plus.svg"),
-			jiramed: require("@/assets/jiramed.png"),
 		};
 	},
 	methods: {
@@ -49,7 +51,7 @@ export default {
 				this.error = true;
 			} else {
 				const yourName = {
-					name: this.text,
+					firstname: this.text,
 				};
 
 				alert(JSON.stringify(yourName, null, 2));
@@ -57,8 +59,7 @@ export default {
 		},
 	},
 	watch: {
-		text: function (val) {
-			console.log("val", val);
+		text: function () {
 			this.error = false;
 		},
 	},
