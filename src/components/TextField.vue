@@ -20,10 +20,6 @@ export default {
 			type: String,
 			required: true,
 		},
-		value: {
-			type: String,
-			required: true,
-		},
 		label: {
 			type: String,
 			required: true,
@@ -33,6 +29,10 @@ export default {
 			required: false,
 		},
 		error: {
+			type: Boolean,
+			required: false,
+		},
+		isEmpty: {
 			type: Boolean,
 			required: false,
 		},
