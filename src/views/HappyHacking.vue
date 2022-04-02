@@ -1,7 +1,12 @@
 <template>
 	<AppLayout>
 		<div class="max-w-[600px] mx-auto w-full flex flex-col gap-y-6">
-			<div><PrimaryButton /></div>
+			<div class="flex gap-x-4">
+				<PrimaryButton /><PrimaryButton :disabled="true" />
+			</div>
+			<div class="flex gap-x-4">
+				<OutlinedButton /><OutlinedButton :disabled="true" />
+			</div>
 
 			<form
 				@submit.prevent="onSubmit"
@@ -34,12 +39,19 @@
 <script>
 import AppLayout from "@/layout/AppLayout";
 import PrimaryButton from "@/components/PrimaryButton";
+import OutlinedButton from "@/components/OutlinedButton";
 import ProfileCard from "@/components/ProfileCard";
 import TextField from "@/components/TextField";
 
 export default {
 	name: "HappyHacking",
-	components: { AppLayout, PrimaryButton, ProfileCard, TextField },
+	components: {
+		AppLayout,
+		PrimaryButton,
+		OutlinedButton,
+		ProfileCard,
+		TextField,
+	},
 	data() {
 		return {
 			text: "",

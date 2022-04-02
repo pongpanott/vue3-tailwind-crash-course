@@ -7,8 +7,12 @@
 			@input="updateValue"
 			:modelValue="modelValue"
 			:disabled="disabled"
+			class="border-neutral-300 outline-0 border-[1px] h-10 w-full px-4 placeholder-neutral-300 max-w-[320px] focus:border-primary-500"
+			:class="[!isEmpty && 'border-secondary-500', error && 'border-error-500']"
 		/>
-		<div class="h-6"><span v-if="error">this field is required</span></div>
+		<div class="h-6 text-error-500 text-xs">
+			<span v-if="error">this field is required</span>
+		</div>
 	</div>
 </template>
 
